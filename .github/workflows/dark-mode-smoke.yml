@@ -1,0 +1,25 @@
+name: Dark mode smoke test
+on:
+  push:
+    branches: [gh-pages]
+    paths:
+      - index.html
+      - tests/dark-mode-smoke.cjs
+      - .github/workflows/dark-mode-smoke.yml
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          python3 -m http.server 4173 >/tmp/td-http.log 2>&1 &
+          sleep 2
+      - run: node tests/dark-mode-smoke.cjs
