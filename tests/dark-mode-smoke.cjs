@@ -16,7 +16,7 @@ const { chromium } = require('playwright');
       const lum=a=>{const f=v=>(v/=255)<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4);return .2126*f(a[0])+.7152*f(a[1])+.0722*f(a[2])};
       const cr=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
       const bg=e=>{for(let n=e;n;n=n.parentElement){const st=getComputedStyle(n);if(st.backgroundImage&&st.backgroundImage!=='none')return null;const c=parse(st.backgroundColor);if(c&&c[3]>.95)return c}return[9,13,18,1]};
-      return [...document.querySelectorAll('.page.active *')].flatMap(e=>{
+      return [...document.querySelectorAll('body *')].flatMap(e=>{
         const s=getComputedStyle(e),r=e.getBoundingClientRect();
         if(r.width<1||r.height<1||s.display==='none'||s.visibility==='hidden'||+s.opacity<.2||e.closest('canvas,svg,iframe,script,style'))return[];
         const text=[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(' ').replace(/\s+/g,' ').trim();
