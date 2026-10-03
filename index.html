@@ -469,6 +469,128 @@ html[data-theme="dark"] .embedded-video-caption span:last-child{color:#919ba8!im
 }
 </style>
 
+
+<style id="td-dark-contrast-fix-v14">
+/* Comprehensive dark-mode text contrast */
+html[data-theme="dark"] .main,
+html[data-theme="dark"] .auth-shell{
+  color:#eaf0f7!important;
+}
+
+html[data-theme="dark"] .main :where(
+  span,label,li,dt,dd,summary,legend,caption,th,td,
+  .metric-line,.metric-four,.side-row,.lab-header,.chart-observation,
+  .lesson-position,.lesson-meta-row,.lesson-unit-head,.catalog-note,
+  .practice-strip,.practice-tabs,.market-toolbar,.history-dataset-bar,
+  .historical-preset-bar,.paper-summary,.ticket-card,.coach-card,
+  .profile-chip,.rank-card,.xp-card,.glossary-card,.journal-entry
+){
+  color:#cbd5e1!important;
+}
+
+html[data-theme="dark"] .main :where(
+  h1,h2,h3,h4,h5,h6,strong,b,
+  .lesson-row h4,.lesson-unit-head h3,
+  .chart-topbar b,.paper-summary b,.ticket-card b,
+  .profile-chip b,.practice-strip b
+){
+  color:#f4f7fb!important;
+}
+
+html[data-theme="dark"] .main :where(
+  p,small,.helper,.hint,.description,.subtle,
+  .lesson-objective,.lead-copy,.lesson-reading-grid p,
+  .lesson-media-section p,.application-lab p,.confidence-card p,
+  .video-inline-copy p,.video-side p,.chart-hint
+){
+  color:#aeb8c6!important;
+}
+
+html[data-theme="dark"] .main :where(
+  .eyebrow,.card-kicker,.micro-label,.lesson-meta-row,
+  .lesson-position,.pill-stat span,.metric-four span,
+  .practice-strip span
+){
+  color:#8f9baa!important;
+}
+
+html[data-theme="dark"] a,
+html[data-theme="dark"] .text-link{
+  color:#8ddbea!important;
+}
+
+html[data-theme="dark"] button:not(.btn.primary):not(.nav-item.active){
+  color:#d7e0ea!important;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea{
+  color:#f0f4f8!important;
+  caret-color:#f0f4f8!important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder{
+  color:#718093!important;
+  opacity:1!important;
+}
+
+html[data-theme="dark"] option{
+  background:#0d131a!important;
+  color:#eef2f7!important;
+}
+
+html[data-theme="dark"] .lesson-goal,
+html[data-theme="dark"] .lesson-goal p,
+html[data-theme="dark"] .deep-dive summary,
+html[data-theme="dark"] .deep-dive p,
+html[data-theme="dark"] .checkpoint-option,
+html[data-theme="dark"] .confidence-scale button{
+  color:#cbd5e1!important;
+}
+
+html[data-theme="dark"] .checkpoint-option:hover,
+html[data-theme="dark"] .confidence-scale button:hover{
+  color:#ffffff!important;
+}
+
+html[data-theme="dark"] #market :where(
+  #chartOhlc,.chart-topbar span,.indicator-chips label,
+  .draw-toolbar button,.history-dataset-bar span,.history-dataset-bar small,
+  .historical-preset-bar span,.historical-preset-bar small,
+  .order-row,.position-row,.trade-row
+){
+  color:#b8c4d2!important;
+}
+
+html[data-theme="dark"] #market :where(
+  #chartSymbolLabel,.paper-summary strong,.ticket-card strong,.coach-card strong
+){
+  color:#f4f7fb!important;
+}
+
+/* Preserve intentional dark text on bright selected controls */
+html[data-theme="dark"] .nav-item.active,
+html[data-theme="dark"] .nav-item.active span,
+html[data-theme="dark"] #academy .module-button.active{
+  color:#0a0e13!important;
+}
+
+html[data-theme="dark"] .btn.primary{
+  color:#081014!important;
+}
+
+html[data-theme="dark"] .status-pill,
+html[data-theme="dark"] .security-badge,
+html[data-theme="dark"] .curation-badge,
+html[data-theme="dark"] .tier-chip,
+html[data-theme="dark"] .lab-tag,
+html[data-theme="dark"] .inside-badge{
+  color:#dce5ef!important;
+}
+</style>
+
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
