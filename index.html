@@ -867,6 +867,172 @@ html[data-theme="dark"] #profile :where(.profile-hero,.security-settings,.storag
 }
 </style>
 
+
+<style id="td-dark-runtime-fixes-v14">
+/* Runtime-generated components that were still carrying light-theme surfaces */
+
+/* Primary and secondary actions */
+html[data-theme="dark"] .page .btn.primary{
+  background:#d9f3f0!important;
+  background-image:none!important;
+  color:#071014!important;
+  border-color:#d9f3f0!important;
+}
+html[data-theme="dark"] #academy .btn.secondary{
+  background:#17212c!important;
+  color:#eef3f8!important;
+  border-color:#2c3946!important;
+}
+
+/* Video tier chips */
+html[data-theme="dark"] #videos .tier-chip{
+  background:#17202a!important;
+  color:#eef4fa!important;
+  border-color:#2c3946!important;
+}
+html[data-theme="dark"] #videos .tier-core{background:#12312f!important;color:#d6fff6!important}
+html[data-theme="dark"] #videos .tier-applied{background:#24254a!important;color:#ececff!important}
+html[data-theme="dark"] #videos .tier-advanced{background:#3a2a18!important;color:#ffe6bd!important}
+
+/* Practice controls and answers */
+html[data-theme="dark"] #practice .practice-tabs button.active{
+  background:#edf2f7!important;
+  color:#0a0e13!important;
+  border-color:#edf2f7!important;
+}
+html[data-theme="dark"] #practice .quiz-option{
+  background:#111821!important;
+  color:#eef3f8!important;
+  border-color:#2c3743!important;
+}
+html[data-theme="dark"] #practice .quiz-option:hover{
+  background:#17212c!important;
+  color:#ffffff!important;
+}
+html[data-theme="dark"] #practice .check.boxed{
+  background:#111821!important;
+  color:#dbe5ef!important;
+  border-color:#2c3743!important;
+}
+
+/* Market Lab selected controls + labels */
+html[data-theme="dark"] #market .segmented button.active{
+  background:#edf2f7!important;
+  color:#0a0e13!important;
+  border-color:#edf2f7!important;
+}
+html[data-theme="dark"] #market .pane-label{
+  color:#aebdcd!important;
+}
+
+/* Mastery donut center */
+html[data-theme="dark"] #mastery .mastery-donut,
+html[data-theme="dark"] #mastery .mastery-donut > div{
+  background-color:#0d141c!important;
+  color:#f4f7fb!important;
+}
+html[data-theme="dark"] #mastery .mastery-donut :where(b,span){
+  color:#f4f7fb!important;
+}
+
+/* Decision Profile generated metric cards */
+html[data-theme="dark"] #decision .decision-metric-grid > *,
+html[data-theme="dark"] #decision .decision-metric{
+  background:#111821!important;
+  border:1px solid #27323e!important;
+  color:#eaf0f7!important;
+}
+html[data-theme="dark"] #decision .decision-metric :where(b,strong,h3){
+  color:#f5f8fc!important;
+}
+html[data-theme="dark"] #decision .decision-metric p{
+  color:#b7c2cf!important;
+}
+
+/* Credential system generated cards */
+html[data-theme="dark"] #credentials :where(
+  .credential-card,.credential-card.locked,.credential-card-top,
+  .credential-score,.credential-requirements,.credential-wallet-card,
+  .capstone-card,.capstone-workspace,.capstone-standard,
+  .standards-card,.transcript,.academic-standing-card,.record-stat-card,
+  .certificate-stage
+){
+  background:#111821!important;
+  background-image:none!important;
+  border-color:#2a3541!important;
+  color:#eaf0f7!important;
+}
+html[data-theme="dark"] #credentials .credential-grid > *{
+  background:#111821!important;
+  border-color:#2a3541!important;
+  color:#eaf0f7!important;
+}
+html[data-theme="dark"] #credentials .credential-card :where(h2,b,strong){
+  color:#f5f8fc!important;
+}
+html[data-theme="dark"] #credentials .credential-card :where(p,li,span){
+  color:#b9c4d1!important;
+}
+html[data-theme="dark"] #credentials .capstone-card > div > div,
+html[data-theme="dark"] #credentials .transcript > div{
+  background:#0d141c!important;
+  color:#dce5ef!important;
+  border-color:#28333f!important;
+}
+
+/* Rewards */
+html[data-theme="dark"] #rewards .badge-icon{
+  color:#aeb8ff!important;
+}
+
+/* Journal */
+html[data-theme="dark"] #journal .check.boxed{
+  background:#111821!important;
+  color:#dbe5ef!important;
+  border-color:#2c3743!important;
+}
+
+/* Connections */
+html[data-theme="dark"] #connections .connector-status{
+  background:#17212c!important;
+  color:#eef3f8!important;
+  border-color:#2c3946!important;
+}
+
+/* Profile generated stat/explanation/security surfaces */
+html[data-theme="dark"] #profile .profile-stats > div{
+  background:#111821!important;
+  color:#eaf0f7!important;
+  border:1px solid #2a3541!important;
+}
+html[data-theme="dark"] #profile .profile-stats b{color:#f5f8fc!important}
+html[data-theme="dark"] #profile .profile-stats span{color:#aab6c4!important}
+html[data-theme="dark"] #profile .setting-explain{
+  background:#0d141c!important;
+  color:#b9c4d1!important;
+  border-color:#28333f!important;
+}
+html[data-theme="dark"] #profile .security-status{
+  background:#0d141c!important;
+  color:#eaf0f7!important;
+  border-color:#28333f!important;
+}
+html[data-theme="dark"] #profile .security-status b{color:#f5f8fc!important}
+html[data-theme="dark"] #profile .security-status small{color:#aab6c4!important}
+html[data-theme="dark"] #profile .security-warning{
+  background:#1b1511!important;
+  color:#ffd9bd!important;
+  border-color:#4a3426!important;
+}
+
+/* Public-preview banner inserted at runtime. Target common light announcement surfaces. */
+html[data-theme="dark"] .main > :where(.preview-banner,.public-display-banner,.display-banner,.preview-strip,.public-strip){
+  background:#111821!important;
+  color:#dce5ef!important;
+  border-color:#2a3541!important;
+}
+</style>
+
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
