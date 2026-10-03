@@ -704,6 +704,169 @@ html:not([data-theme="dark"]) #academy .lesson-workspace > div:first-child{
 }
 </style>
 
+
+<style id="td-dark-all-pages-hardening-v14">
+/* Final dark-mode surface hardening across every published page */
+html[data-theme="dark"] .page{
+  background:#090d12!important;
+  color:#eaf0f7!important;
+}
+
+/* Common secondary surfaces */
+html[data-theme="dark"] :where(
+  .hero-card,.first30-card,.journey-shell,.curated-shell,.curated-video-grid,
+  .practice-shell-v7,.practice-panel,.chart-stage-v7,.feedback,.scenario-grid,
+  .drill-card,.guide-card,.skill-signal-list,.market-toolbar-group,.account-card,
+  .position-card,.table-lite,.mastery-list,.decision-summary,.decision-metric-grid,
+  .decision-standard,.academic-record-grid,.academic-standing-card,.record-stat-card,
+  .credential-grid,.credential-wallet-card,.credential-section-grid,.capstone-card,
+  .capstone-standard,.capstone-workspace,.standards-card,.standards-list,.transcript,
+  .record-seal,.certificate-stage,.reward-hero,.badge-grid,.journal-shell,.journal-form,
+  .journal-feed,.calc-result,.glossary-grid,.connections-grid,.bridge-card,.connector-grid,
+  .profile-hero,.security-settings,.storage-settings
+){
+  background:#0f151d!important;
+  background-image:none!important;
+  border-color:#28323e!important;
+  color:#e7edf5!important;
+  box-shadow:none!important;
+}
+
+/* Nested form/grid wrappers should not reintroduce light backgrounds */
+html[data-theme="dark"] :where(
+  .form-two,.form-three,.form-four,.card-grid,.market-bottom-grid,
+  .profile-layout,.profile-right-stack,.credential-section-grid
+){
+  background:transparent!important;
+}
+
+/* Lists, tables, feeds and rows */
+html[data-theme="dark"] :where(
+  .table-lite th,.table-lite td,.transcript th,.transcript td,
+  .journal-entry,.mastery-row,.credential-wallet-card,.record-stat-card,
+  .bridge-endpoint,.standards-list li
+){
+  background:#0d131a!important;
+  border-color:#26313c!important;
+  color:#dbe5ef!important;
+}
+html[data-theme="dark"] :where(
+  .table-lite tr,.transcript tr,.journal-entry,.mastery-row
+):hover{
+  background:#121a23!important;
+}
+
+/* Generic dark-page typography. This intentionally sits late in the cascade. */
+html[data-theme="dark"] .page :where(
+  h1,h2,h3,h4,h5,h6,strong,b,.score-display,.grade-lockup
+){
+  color:#f5f8fc!important;
+}
+html[data-theme="dark"] .page :where(
+  p,li,dd,dt,label,summary,caption,th,td,
+  .setting-explain,.ticket-note,.credential-disclaimer,
+  .security-warning,.bridge-endpoint,.calc-result
+){
+  color:#c4ceda!important;
+}
+html[data-theme="dark"] .page :where(
+  small,.eyebrow,.card-kicker,.micro-label,.optional,
+  .muted,.helper,.hint
+){
+  color:#96a3b2!important;
+}
+
+/* Tabs and segmented controls */
+html[data-theme="dark"] :where(
+  .practice-tabs button,.segmented button,.account-mode-switch button,
+  .auth-tab,.tier-filter,.confidence-scale button
+){
+  background:#111821!important;
+  color:#c7d1dc!important;
+  border-color:#2b3642!important;
+}
+html[data-theme="dark"] :where(
+  .practice-tabs button.active,.segmented button.active,
+  .account-mode-switch button.active,.auth-tab.active,.tier-filter.active
+){
+  background:#edf2f7!important;
+  color:#0a0e13!important;
+  border-color:#edf2f7!important;
+}
+
+/* Inputs and interactive text */
+html[data-theme="dark"] .page :where(input,select,textarea){
+  background:#0c1219!important;
+  color:#f0f4f8!important;
+  border-color:#2a3541!important;
+}
+html[data-theme="dark"] .page :where(input,textarea)::placeholder{
+  color:#718095!important;
+  opacity:1!important;
+}
+
+/* Buttons */
+html[data-theme="dark"] .page .btn:not(.primary){
+  background:#111821!important;
+  color:#d8e1eb!important;
+  border-color:#2b3642!important;
+}
+html[data-theme="dark"] .page .btn.primary{
+  color:#081014!important;
+}
+html[data-theme="dark"] .page .text-danger{
+  color:#ff9a9a!important;
+}
+
+/* Status chips remain readable */
+html[data-theme="dark"] :where(
+  .status-pill,.security-badge,.curation-badge,.lab-tag,.inside-badge,
+  .score-chip,.market-mode-badge
+){
+  background:#17202a!important;
+  color:#dce6f1!important;
+  border-color:#2a3947!important;
+}
+
+/* Page-specific legibility */
+html[data-theme="dark"] #practice .chart-observation,
+html[data-theme="dark"] #practice .decision-prompt,
+html[data-theme="dark"] #practice .risk-problem,
+html[data-theme="dark"] #practice .worked-math{
+  background:#0d141c!important;
+  color:#d7e1ec!important;
+  border-color:#26323e!important;
+}
+html[data-theme="dark"] #credentials :where(
+  .academic-standing-card,.capstone-card,.standards-card,.certificate-stage
+){
+  background:#101720!important;
+}
+html[data-theme="dark"] #rewards :where(.rank-card,.xp-card){
+  background:#101720!important;
+}
+html[data-theme="dark"] #journal .journal-form{
+  background:transparent!important;
+  border-color:#28323e!important;
+}
+html[data-theme="dark"] #tools .calc-result{
+  background:#111a23!important;
+  color:#f0f5fa!important;
+}
+html[data-theme="dark"] #reference .glossary-card{
+  background:#0f151d!important;
+  border-color:#28323e!important;
+}
+html[data-theme="dark"] #connections :where(.bridge-card,.connector-grid>.card){
+  background:#0f151d!important;
+  border-color:#28323e!important;
+}
+html[data-theme="dark"] #profile :where(.profile-hero,.security-settings,.storage-settings){
+  background:#0f151d!important;
+  border-color:#28323e!important;
+}
+</style>
+
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
