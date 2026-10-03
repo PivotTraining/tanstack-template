@@ -401,7 +401,13 @@
    const st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
    const order=["data.js", "curriculum-v12.js", "storage.js", "auth.js", "training-core.js", "credential-crypto.js", "app.js", "market-core.js", "history-core.js", "market.js", "connectors.js"];
    for(const name of order){
-     const code=await gunzip(ASSETS[name]);
+     let code=await gunzip(ASSETS[name]);
+     if(name==="app.js"){
+       code=code.replace('const fd=new FormData(e.currentTarget)','const form=e.currentTarget,fd=new FormData(form)');
+       code=code.replace('const fd=new FormData(e.currentTarget)','const form=e.currentTarget,fd=new FormData(form)');
+       code=code.replace('e.currentTarget.reset()','form.reset()');
+       code=code.replace('e.currentTarget.reset()','form.reset()');
+     }
      const url=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));
      await new Promise((resolve,reject)=>{
        const s=document.createElement('script'); s.src=url; s.onload=()=>{URL.revokeObjectURL(url);resolve();}; s.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Failed loading '+name));}; document.body.appendChild(s);
