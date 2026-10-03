@@ -10,7 +10,7 @@
 
 <link href="https://www.youtube-nocookie.com" rel="preconnect"/>
 
-<meta content="Trading Desk V13 full published display" name="deployment-build"/>
+<meta content="Trading Desk V14 learning-first dark-mode market-motion build" name="deployment-build"/><script>try{document.documentElement.dataset.theme=localStorage.getItem("td-theme")||"light"}catch{document.documentElement.dataset.theme="light"}</script>
 <style id="academy-calm-v13">
 /* Academy Calm Mode: reduce simultaneous visual priority */
 #academy{max-width:1280px}
@@ -240,6 +240,235 @@
 }
 </style>
 
+
+<style id="td-v14-learning-first">
+:root{--focus-bg:#fbfaf7;--focus-ink:#171814;--focus-muted:#74766f;--focus-line:#e7e3da;--focus-panel:#ffffff}
+html{font-size:14px!important}
+body{line-height:1.48!important}
+h1{font-size:clamp(1.7rem,2.4vw,2.35rem)!important}
+h2{font-size:clamp(1.15rem,1.55vw,1.5rem)!important}
+h3{font-size:.96rem!important}
+.page{max-width:1580px!important;padding:24px 32px 64px!important}
+.section-head{margin:26px 0 12px!important}
+.section-head p{font-size:.82rem!important;line-height:1.5!important}
+.card{box-shadow:none!important}
+.btn{font-size:.72rem!important;min-height:34px!important;padding:8px 11px!important}
+.eyebrow,.card-kicker,.micro-label{font-size:.56rem!important;letter-spacing:.11em!important}
+.theme-toggle{width:34px!important;height:34px!important;border-radius:10px!important;font-size:.9rem!important}
+
+/* Learning culture */
+.learning-culture{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 14px;padding:0 2px;color:#777970}
+.learning-culture b{font-size:.56rem;letter-spacing:.13em;color:#171814}
+.learning-culture span{font-size:.71rem}
+.learning-culture small{margin-left:auto;font-size:.64rem;color:#92948e}
+
+/* Education owns the screen. Collapse permanent nav on learning pages. */
+body:has(#academy.active) .sidebar,
+body:has(#videos.active) .sidebar,
+body:has(#practice.active) .sidebar{width:66px!important}
+body:has(#academy.active) .main,
+body:has(#videos.active) .main,
+body:has(#practice.active) .main{margin-left:66px!important}
+body:has(#academy.active) .logo-lockup.compact,
+body:has(#videos.active) .logo-lockup.compact,
+body:has(#practice.active) .logo-lockup.compact{padding:14px 11px!important;justify-content:center!important}
+body:has(#academy.active) .logo-lockup.compact>div:last-child,
+body:has(#videos.active) .logo-lockup.compact>div:last-child,
+body:has(#practice.active) .logo-lockup.compact>div:last-child,
+body:has(#academy.active) .side-card,
+body:has(#videos.active) .side-card,
+body:has(#practice.active) .side-card,
+body:has(#academy.active) .sidebar-foot,
+body:has(#videos.active) .sidebar-foot,
+body:has(#practice.active) .sidebar-foot{display:none!important}
+body:has(#academy.active) .nav-item,
+body:has(#videos.active) .nav-item,
+body:has(#practice.active) .nav-item{font-size:0!important;justify-content:center!important;padding:8px!important;gap:0!important}
+body:has(#academy.active) .nav-item span,
+body:has(#videos.active) .nav-item span,
+body:has(#practice.active) .nav-item span{font-size:.96rem!important;width:auto!important}
+body:has(#academy.active) .nav,
+body:has(#videos.active) .nav,
+body:has(#practice.active) .nav{padding:8px!important}
+
+/* Academy reading area: wide, document-like, fewer boxes. */
+#academy{max-width:1540px!important}
+#academy .lesson-workspace{width:min(94%,1180px)!important;max-width:1180px!important}
+#academy.lesson-active .lesson-workspace{width:min(94%,1120px)!important;max-width:1120px!important}
+#academy .lesson-main-v6{max-width:1040px!important}
+#academy .lesson-hero-v6 h1{font-size:clamp(2rem,3.4vw,3rem)!important}
+#academy .lesson-hero-v6 .lesson-hero-copy>p{font-size:.84rem!important;line-height:1.58!important}
+#academy .lesson-core{padding:18px 0!important;background:transparent!important;border:0!important;border-bottom:1px solid #ebe8e0!important;border-radius:0!important}
+#academy .lead-copy{font-size:.9rem!important;line-height:1.68!important;max-width:82ch}
+#academy .lesson-reading-grid .lesson-section{padding:16px 0!important}
+#academy .lesson-reading-grid .lesson-section p{font-size:.77rem!important}
+#academy .lesson-media-section,#academy .application-lab,#academy .checkpoint-card,#academy .confidence-card{padding:20px 0!important}
+#academy .lesson-player{border-radius:12px!important;max-width:100%!important}
+#academy .lesson-visual-wrap{padding:18px 0!important}
+#academy .visual-card{min-height:200px!important;border-radius:12px!important}
+#academy .deep-dive{border-radius:10px!important}
+#academy .lesson-footer-v6{margin-top:18px!important}
+
+/* Less window-on-window treatment throughout educational surfaces. */
+#practice .practice-panel,
+#practice .card,
+#videos .card,
+#decision .card,
+#mastery .card,
+#journal .card,
+#tools .card,
+#reference .card{box-shadow:none!important}
+#practice .practice-panel{border:0!important;background:transparent!important;padding:12px 0!important}
+#practice .practice-strip{border-left:0!important;border-right:0!important;border-radius:0!important}
+#practice .practice-tabs{border-bottom:1px solid var(--focus-line)!important;padding-bottom:6px!important}
+#videos .video-shell{grid-template-columns:minmax(0,1fr) 260px!important;gap:14px!important}
+#videos .video-side{border:0!important;border-left:1px solid var(--focus-line)!important;border-radius:0!important;background:transparent!important;padding:10px 0 10px 18px!important}
+#videos .curated-video-card{background:transparent!important;border:0!important;border-top:1px solid var(--focus-line)!important;border-radius:0!important;padding:14px 2px!important}
+#videos .curated-video-card p{font-size:.75rem!important}
+
+/* Embedded YouTube */
+.embedded-video-primary{min-width:0}
+.embedded-video-frame{position:relative;aspect-ratio:16/9;background:#090b0e;border-radius:14px;overflow:hidden}
+.embedded-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.embedded-video-caption{display:grid;gap:3px;padding:10px 2px 0}
+.embedded-video-caption b{font-size:.84rem}
+.embedded-video-caption span:last-child{font-size:.71rem;color:#7b7d77}
+#academy .lesson-player iframe{width:100%!important;height:100%!important}
+
+/* Market Lab: chart is the product. */
+#market{max-width:1720px!important}
+#market .market-head{margin-bottom:10px!important}
+#market .market-head p{max-width:760px!important}
+#market .market-terminal{gap:10px!important}
+#market .market-toolbar{border:0!important;border-bottom:1px solid #e6e8ec!important;border-radius:0!important;background:transparent!important;padding:8px 0 10px!important}
+#market .market-toolbar label{font-size:9px!important}
+#market .market-toolbar select{padding:7px 28px 7px 8px!important;font-size:.7rem!important}
+#market .history-dataset-bar,#market .historical-preset-bar{padding:8px 0!important;border:0!important;border-bottom:1px solid #eceef1!important;border-radius:0!important;background:transparent!important}
+#market .history-dataset-bar small,#market .historical-preset-bar small{display:none!important}
+#market .market-main-grid{grid-template-columns:minmax(0,1fr) 265px!important;gap:12px!important}
+#market .chart-card{border-radius:14px!important;border-color:#dfe3e8!important}
+#market .chart-topbar{padding:10px 12px!important}
+#market .chart-topbar b{font-size:.8rem!important}
+#market .chart-topbar span{font-size:.62rem!important}
+#market .draw-toolbar{padding:5px 8px!important}
+#market .draw-tool{font-size:.65rem!important;padding:6px 8px!important}
+#market .canvas-wrap{height:610px!important;background:#fff!important}
+#market .indicator-pane{height:120px!important}
+#market .indicator-pane#rsiPane{height:100px!important}
+#market .trading-rail{gap:0!important;top:76px!important;border-left:1px solid #e4e7eb!important;padding-left:12px!important}
+#market .trading-rail>.card{border:0!important;border-radius:0!important;background:transparent!important;border-bottom:1px solid #e8eaee!important;padding:13px 0!important}
+#market .paper-equity strong{font-size:1.45rem!important}
+#market .paper-stats{gap:5px!important}
+#market .order-ticket h2{font-size:1rem!important}
+#market .market-bottom-grid{gap:10px!important;margin-top:4px!important}
+#market .market-bottom-grid>.card{border:0!important;border-top:1px solid #e6e8ec!important;border-radius:0!important;background:transparent!important;padding:14px 0!important}
+#market .chart-hint{font-size:9px!important}
+
+/* True site-wide dark mode */
+html[data-theme="dark"]{color-scheme:dark;--focus-bg:#090d12;--focus-ink:#eef2f7;--focus-muted:#97a1af;--focus-line:#242b34;--focus-panel:#10161e}
+html[data-theme="dark"] body{background:#090d12!important;color:#e9eef5!important}
+html[data-theme="dark"] .bg-grid{opacity:.08!important}
+html[data-theme="dark"] .orb{opacity:.09!important}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] strong,
+html[data-theme="dark"] b{color:#eef2f7!important}
+html[data-theme="dark"] p,
+html[data-theme="dark"] small,
+html[data-theme="dark"] .muted{color:#96a0ad!important}
+html[data-theme="dark"] .sidebar{background:rgba(10,14,20,.97)!important;border-color:#242b34!important}
+html[data-theme="dark"] .nav-item{color:#8f99a7!important}
+html[data-theme="dark"] .nav-item:hover{background:#151b23!important;color:#f1f5f9!important}
+html[data-theme="dark"] .nav-item.active{background:#eef2f7!important;color:#0a0e13!important}
+html[data-theme="dark"] .nav-item.active span{color:#0a0e13!important}
+html[data-theme="dark"] .topbar{background:rgba(9,13,18,.92)!important;border-color:#242b34!important}
+html[data-theme="dark"] .topbar h2{color:#eef2f7!important}
+html[data-theme="dark"] .profile-chip,
+html[data-theme="dark"] .icon-btn,
+html[data-theme="dark"] .pill-stat{background:transparent!important;border-color:#2a323d!important;color:#eef2f7!important}
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .glass,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .profile-settings,
+html[data-theme="dark"] .profile-summary,
+html[data-theme="dark"] .glossary-card,
+html[data-theme="dark"] .rank-card,
+html[data-theme="dark"] .xp-card,
+html[data-theme="dark"] .calc-card,
+html[data-theme="dark"] .mastery-hero,
+html[data-theme="dark"] .mastery-row,
+html[data-theme="dark"] .badge,
+html[data-theme="dark"] .journal-entry{background:#10161e!important;border-color:#242b34!important;color:#e9eef5!important}
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea{background:#0d131a!important;color:#e9eef5!important;border-color:#2a323d!important}
+html[data-theme="dark"] .btn.ghost{background:#121821!important;border-color:#2a323d!important;color:#dfe6ef!important}
+html[data-theme="dark"] .btn.secondary{background:#28233f!important;color:#cfc6ff!important}
+html[data-theme="dark"] .progress,
+html[data-theme="dark"] .thin-progress,
+html[data-theme="dark"] .mastery-bar{background:#222a34!important}
+html[data-theme="dark"] .learning-culture,
+html[data-theme="dark"] .learning-culture span,
+html[data-theme="dark"] .learning-culture small{color:#8994a2!important}
+html[data-theme="dark"] .learning-culture b{color:#e8edf4!important}
+html[data-theme="dark"] #academy .journey-summary-card.primary{background:#111820!important;color:#eef2f7!important;border-color:#27303a!important}
+html[data-theme="dark"] #academy .module-button{border-color:#28313b!important;color:#98a3b1!important}
+html[data-theme="dark"] #academy .module-button.active{background:#eef2f7!important;color:#0b0f14!important;border-color:#eef2f7!important}
+html[data-theme="dark"] #academy .lesson-core,
+html[data-theme="dark"] #academy .lesson-reading-grid .lesson-section,
+html[data-theme="dark"] #academy .lesson-media-section,
+html[data-theme="dark"] #academy .application-lab,
+html[data-theme="dark"] #academy .checkpoint-card,
+html[data-theme="dark"] #academy .confidence-card,
+html[data-theme="dark"] #academy .lesson-visual-wrap{border-color:#242b34!important}
+html[data-theme="dark"] #academy .visual-card{background:#0f151d!important}
+html[data-theme="dark"] #academy .deep-dive{background:#0d1218!important;border-color:#29313b!important}
+html[data-theme="dark"] #videos .video-side,
+html[data-theme="dark"] #videos .curated-video-card{border-color:#242b34!important}
+html[data-theme="dark"] #market .market-toolbar,
+html[data-theme="dark"] #market .history-dataset-bar,
+html[data-theme="dark"] #market .historical-preset-bar,
+html[data-theme="dark"] #market .trading-rail,
+html[data-theme="dark"] #market .trading-rail>.card,
+html[data-theme="dark"] #market .market-bottom-grid>.card{border-color:#242b34!important}
+html[data-theme="dark"] #market .chart-card{background:#0b1017!important;border-color:#29323d!important}
+html[data-theme="dark"] #market .chart-topbar,
+html[data-theme="dark"] #market .draw-toolbar,
+html[data-theme="dark"] #market .indicator-pane,
+html[data-theme="dark"] #market .canvas-wrap{background:#0b1017!important;border-color:#242b34!important}
+html[data-theme="dark"] #market .draw-tool{color:#98a3b1!important}
+html[data-theme="dark"] #market .draw-tool.active,
+html[data-theme="dark"] #market .draw-tool:hover{background:#171e27!important;color:#eef2f7!important;border-color:#313b47!important;box-shadow:none!important}
+html[data-theme="dark"] #market .toggle-chip{background:#111820!important;color:#aeb8c5!important;border-color:#2b3540!important}
+html[data-theme="dark"] #market .chart-hint{background:rgba(15,21,29,.9)!important;color:#aab4c1!important;border-color:#2b3540!important}
+html[data-theme="dark"] .embedded-video-caption span:last-child{color:#919ba8!important}
+
+/* Smaller screens */
+@media(max-width:1100px){
+  #market .market-main-grid{grid-template-columns:1fr!important}
+  #market .trading-rail{position:static!important;border-left:0!important;padding-left:0!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  #market .canvas-wrap{height:500px!important}
+  #videos .video-shell{grid-template-columns:1fr!important}
+  #videos .video-side{border-left:0!important;border-top:1px solid var(--focus-line)!important;padding:14px 0!important}
+}
+@media(max-width:760px){
+  html{font-size:13px!important}
+  .page{padding:16px 13px 44px!important}
+  body:has(#academy.active) .sidebar,
+  body:has(#videos.active) .sidebar,
+  body:has(#practice.active) .sidebar{width:232px!important}
+  body:has(#academy.active) .main,
+  body:has(#videos.active) .main,
+  body:has(#practice.active) .main{margin-left:0!important}
+  #market .canvas-wrap{height:390px!important}
+  #market .trading-rail{grid-template-columns:1fr!important}
+  .learning-culture{align-items:flex-start!important;flex-direction:column!important;gap:3px!important}
+  .learning-culture small{margin-left:0!important}
+}
+</style>
+
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
@@ -342,15 +571,16 @@
 <div class="pill-stat"><span>XP</span><strong id="topXp">0</strong></div>
 <div class="pill-stat"><span>GRADE</span><strong id="topGrade">—</strong></div>
 <div class="pill-stat"><span>STREAK</span><strong id="topStreak">1🔥</strong></div>
+<button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Dark mode">☾</button>
 <button class="profile-chip" data-jump="profile"><span class="avatar" id="topAvatar">CD</span><span><b id="topName">Chris</b><small id="topRank">Market Rookie</small></span></button>
 </div>
 </header>
 <section class="page active" id="dashboard">
 <div class="hero-card glass">
 <div class="hero-copy">
-<span class="status-pill">ADAPTIVE LEARNING ACTIVE</span>
+<span class="status-pill">CLARITY BEFORE SPEED</span>
 <h1 id="heroTitle">Build skill before risking capital.</h1>
-<p id="heroSub">Your desk adjusts language and lesson depth without changing the competency standard.</p>
+<p id="heroSub">Understand it. Explain it simply. See it. Practice it. Review the process.</p>
 <div class="hero-actions"><button class="btn primary" data-jump="academy">Continue learning</button><button class="btn secondary" data-jump="practice">Daily challenge</button></div>
 <div class="adaptive-console">
 <label><span>Learning voice</span><select id="lensSelect"><option value="youth">Middle School</option><option value="plain">Plainspoken Adult</option><option value="professional">Professional</option><option value="executive">Technical / Executive</option></select></label>
@@ -377,6 +607,7 @@
 </section>
 <section class="page" id="academy">
 <div class="section-head academy-head"><div><span class="eyebrow">ACADEMY</span><h1>One lesson at a time.</h1><p>Core first. Practice as you go. Go deeper only when it helps.</p></div><div class="inline-controls"><select id="academyLens"><option value="youth">Middle School</option><option value="plain">Plainspoken Adult</option><option value="professional">Professional</option><option value="executive">Technical / Executive</option></select><select id="academyDepth"><option value="quick">Quick Read</option><option value="core">Core Lesson</option><option value="deep">Deep Dive</option></select></div></div>
+<div class="learning-culture"><b>THE TRADING DESK WAY</b><span>Understand it → Explain it simply → See it → Practice it → Review the process</span><small>Process before P&amp;L.</small></div>
 <div class="journey-shell">
 <div class="journey-intro">
 <div><span class="card-kicker">LEARNING PATH</span><h2>See the whole road before you take the next step.</h2><p>Each stage has a distinct job. You do not need to master everything at once; you need to know what you are building and why it comes next.</p></div>
@@ -390,7 +621,7 @@
 <section class="page" id="videos">
 <div class="section-head"><div><span class="eyebrow">CURATED VIDEO LAB</span><h1>Watch only what earns its place.</h1><p>Ross Cameron’s full class starts at 0:00. Curated chapter links open directly in YouTube so your signed-in Premium family account handles playback.</p></div><span class="curation-badge">FAMILY · PREMIUM READY</span></div>
 <div class="video-shell curated-shell">
-<article class="card video-primary"><span class="card-kicker">ROSS CAMERON · FULL CLASS</span><h2>Start from the beginning</h2><p>Use the full class once for shared vocabulary. After that, Trading Desk points you to only the chapter that supports the current competency.</p><a class="btn primary" href="https://www.youtube.com/watch?v=oxob0x0Xz7s&amp;list=PLAaEIq3f-DKI&amp;t=0s" rel="noopener noreferrer" target="_blank">Start Ross at 0:00 →</a><small>Trading Desk never receives your Google or YouTube password.</small></article>
+<article class="video-primary embedded-video-primary"><div class="embedded-video-frame"><iframe id="curatedVideoFrame" src="https://www.youtube-nocookie.com/embed/oxob0x0Xz7s?start=0&amp;rel=0&amp;playsinline=1" title="Ross Cameron Ultimate Day Trading Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="embedded-video-caption"><span class="card-kicker">ROSS CAMERON · FULL CLASS</span><b id="embeddedVideoTitle">Start from the beginning · 0:00</b><span>Use the full class once for shared vocabulary. Curated chapters below load into this player.</span></div></article>
 <aside class="card video-side"><span class="card-kicker">LEARNING EVIDENCE</span><h3 id="videoSideTitle">Full class foundation</h3><p id="videoSideWhy">Watch intentionally, then record the learning rather than counting screen time.</p><div class="divider"></div><label class="check"><input id="videoWatched" type="checkbox"/> Watched intentionally</label><label class="check"><input id="videoNotes" type="checkbox"/> Took notes</label><label class="check"><input id="videoPractice" type="checkbox"/> Practiced the concept</label><textarea id="videoNoteText" placeholder="What changed in your understanding? What still feels unclear?" rows="6"></textarea><button class="btn secondary full" id="saveVideoNotes">Save learning evidence</button></aside>
 </div>
 <div class="section-head compact-head"><div><span class="eyebrow">CURATED SEQUENCE</span><h2>Use the chapter, not the whole video every time.</h2></div></div><div class="curated-video-grid" id="curatedVideoGrid"></div>
@@ -621,10 +852,85 @@
  try{
   const css=await gunzip(ASSETS['styles.css']);const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
   const order=["data.js", "curriculum-v12.js", "flagship-v13.js", "video-v13.js", "storage.js", "auth.js", "training-core.js", "credential-crypto.js", "app.js", "market-core.js", "history-core.js", "market.js", "connectors.js", "decision-v13.js"];
-  for(const name of order){let code=await gunzip(ASSETS[name]);if(name==='app.js'){code=code.replace(/if\("serviceWorker" in navigator\)[^\n]+/g,'');code=code.replace('if(!state.active)return;const p=profile();renderJourney();','if(!state.active)return;const p=profile();renderJourney();$("academy")?.classList.toggle("lesson-active",Boolean(activeLesson));');code=code.replace('<details class="deep-dive" open>','<details class="deep-dive">');}const url=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=url;s.onload=()=>{URL.revokeObjectURL(url);resolve()};s.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Failed loading '+name))};document.body.appendChild(s)});}
+  for(const name of order){let code=await gunzip(ASSETS[name]);if(name==='app.js'){code=code.replace(/if\("serviceWorker" in navigator\)[^\n]+/g,'');code=code.replace('if(!state.active)return;const p=profile();renderJourney();','if(!state.active)return;const p=profile();renderJourney();$("academy")?.classList.toggle("lesson-active",Boolean(activeLesson));');code=code.replace('<details class="deep-dive" open>','<details class="deep-dive">');}
+if(name==='market.js'){
+ code=code.replace(/(const runtime=\{[^;]+\};)/,'$1\\n  function darkMode(){return document.documentElement.dataset.theme==="dark"}');
+ code=code.replace(/function buildForming\(bar,step\)\{[\s\S]*?\}\n  function displayBars/,
+`function buildForming(bar,step){if(!bar)return null;const total=18,p=clamp(step/(total-1),0,1),up=bar.close>=bar.open,pts=up?[{p:0,v:bar.open},{p:.2,v:bar.low},{p:.7,v:bar.high},{p:1,v:bar.close}]:[{p:0,v:bar.open},{p:.2,v:bar.high},{p:.7,v:bar.low},{p:1,v:bar.close}];let j=1;while(j<pts.length-1&&p>pts[j].p)j++;const a=pts[j-1],b=pts[j],local=clamp((p-a.p)/(b.p-a.p),0,1),ease=local*local*(3-2*local),range=Math.max(1e-9,bar.high-bar.low),jitter=Math.sin((step+1)*2.27+(bar.time%997)/37)*range*.018*Math.sin(Math.PI*p),price=clamp(a.v+(b.v-a.v)*ease+jitter,bar.low,bar.high),seen=[bar.open,price];for(const pt of pts){if(pt.p<=p)seen.push(pt.v)}return{time:bar.time,open:bar.open,high:Math.max(...seen),low:Math.min(...seen),close:step>=total-1?bar.close:price,volume:Math.round(bar.volume*((step+1)/total))}}\\n  function displayBars`);
+ code=code.replace(/function replayTick\(\)\{[\s\S]*?\}\n  function play/,
+`function replayTick(){if(runtime.mode!=='replay')return;const next=runtime.bars[runtime.visibleIndex+1];if(!next){pause();return}runtime.tick=(runtime.tick??-1)+1;runtime.liveBar=buildForming(next,runtime.tick);processMarket(lastPrice(),runtime.liveBar);if(runtime.tick>=17){runtime.visibleIndex++;runtime.liveBar=null;runtime.tick=-1}redraw()}\\n  function play`);
+ code=code.replace(/function play\(\)\{[\s\S]*?\}\n  function pause/,
+`function play(){if(runtime.mode!=='replay')return;if(runtime.playing){pause();return}runtime.playing=true;$('marketPlay').textContent='❚❚ Pause';const interval=Math.max(32,120/runtime.speed);runtime.timer=setInterval(replayTick,interval)}\\n  function pause`);
+ code=code.replace('function step(){pause();for(let i=0;i<9;i++)replayTick()}','function step(){pause();for(let i=0;i<18;i++)replayTick()}');
+ code=code.replaceAll("ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);","ctx.fillStyle=darkMode()?'#0b1017':'#fff';ctx.fillRect(0,0,canvas.width,canvas.height);");
+ code=code.replace("line(ctx,r.x,y,r.x+r.w,y,'#edf0f4',1);","line(ctx,r.x,y,r.x+r.w,y,darkMode()?'#27313d':'#edf0f4',1);");
+ code=code.replace("line(ctx,x,r.y,x,r.y+r.h,'#f5f6f8',1);","line(ctx,x,r.y,x,r.y+r.h,darkMode()?'#161e28':'#f5f6f8',1);");
+ code=code.replace("line(ctx,r.x,zero,r.x+r.w,zero,'#d6dae0',1);","line(ctx,r.x,zero,r.x+r.w,zero,darkMode()?'#33404f':'#d6dae0',1);");
+ code=code.replace("v===50?'#e5e7eb':'#f0d7d7'","v===50?(darkMode()?'#303b48':'#e5e7eb'):(darkMode()?'#392a31':'#f0d7d7')");
+ code=code.replace("line(ctx,r.x,y,r.x+r.w,y,'#111827',1,[4,4]);ctx.fillStyle='#111827';ctx.fillRect(r.x+r.w+2,y-10,56,20);text(ctx,formatPrice(cp),r.x+r.w+30,y+4,'#fff','center',10);","line(ctx,r.x,y,r.x+r.w,y,darkMode()?'#dce5f0':'#111827',1,[4,4]);ctx.fillStyle=darkMode()?'#dce5f0':'#111827';ctx.fillRect(r.x+r.w+2,y-10,56,20);text(ctx,formatPrice(cp),r.x+r.w+30,y+4,darkMode()?'#0b1017':'#fff','center',10);");
+ const candleOld="const bodyW=Math.max(2,Math.min(13,cw*.62));bars.forEach((b,i)=>{const abs=start+i,x=map.x(abs),up=b.close>=b.open,col=up?'#08a67a':'#e5484d',yo=map.y(b.open),yc=map.y(b.close),yh=map.y(b.high),yl=map.y(b.low);line(ctx,x,yh,x,yl,col,1.15);ctx.fillStyle=col;ctx.fillRect(x-bodyW/2,Math.min(yo,yc),bodyW,Math.max(1,Math.abs(yc-yo))) });";
+ const candleNew="const bodyW=Math.max(2,Math.min(13,cw*.62)),maxVol=Math.max(1,...bars.map(b=>Number(b.volume)||0));bars.forEach((b,i)=>{const abs=start+i,x=map.x(abs),up=b.close>=b.open,col=up?'#18b889':'#f0525b',vh=(Number(b.volume)||0)/maxVol*(r.h*.11);ctx.fillStyle=up?'rgba(24,184,137,.09)':'rgba(240,82,91,.09)';ctx.fillRect(x-Math.max(1,cw*.32),r.y+r.h-vh,Math.max(2,cw*.64),vh);const yo=map.y(b.open),yc=map.y(b.close),yh=map.y(b.high),yl=map.y(b.low);if(i===bars.length-1){ctx.save();ctx.shadowColor=col;ctx.shadowBlur=10;line(ctx,x,yh,x,yl,col,1.35);ctx.fillStyle=col;ctx.fillRect(x-bodyW/2,Math.min(yo,yc),bodyW,Math.max(1,Math.abs(yc-yo)));ctx.restore()}else{line(ctx,x,yh,x,yl,col,1.1);ctx.fillStyle=col;ctx.fillRect(x-bodyW/2,Math.min(yo,yc),bodyW,Math.max(1,Math.abs(yc-yo)))}});";
+ code=code.replace(candleOld,candleNew);
+}
+const url=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=url;s.onload=()=>{URL.revokeObjectURL(url);resolve()};s.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Failed loading '+name))};document.body.appendChild(s)});}
   window.dispatchEvent(new Event('td-cloud-ready'));
  }catch(err){console.error(err);document.body.innerHTML='<main style="font-family:system-ui;padding:48px;max-width:760px;margin:auto"><h1>Trading Desk could not start.</h1><p>'+String(err.message||err)+'</p></main>'}
 })();
 </script>
+
+<script id="td-v14-enhancements">
+(()=>{
+  const YT='oxob0x0Xz7s';
+  const embed=v=>{
+    const start=Math.max(0,Number(v?.start)||0),end=Number(v?.end)||0;
+    return 'https://www.youtube-nocookie.com/embed/'+YT+'?start='+start+(end?'&end='+end:'')+'&rel=0&playsinline=1';
+  };
+  const applyTheme=t=>{
+    document.documentElement.dataset.theme=t;
+    try{localStorage.setItem('td-theme',t)}catch{}
+    const b=document.getElementById('themeToggle');
+    if(b){b.textContent=t==='dark'?'☀':'☾';b.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');b.title=t==='dark'?'Light mode':'Dark mode'}
+    if(document.getElementById('market')?.classList.contains('active')) setTimeout(()=>window.TDMarket?.render?.(),30);
+  };
+  const wire=()=>{
+    const b=document.getElementById('themeToggle');
+    if(b&&!b.dataset.bound){b.dataset.bound='1';b.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'))}
+    applyTheme(document.documentElement.dataset.theme||'light');
+
+    const grid=document.getElementById('curatedVideoGrid');
+    if(grid&&!grid.dataset.embedBound){
+      grid.dataset.embedBound='1';
+      grid.addEventListener('click',e=>{
+        const a=e.target.closest('[data-video-id]'); if(!a)return;
+        e.preventDefault();
+        const v=window.TDVideos?.segments?.find(x=>x.id===a.dataset.videoId); if(!v)return;
+        const f=document.getElementById('curatedVideoFrame'); if(f)f.src=embed(v);
+        const title=document.getElementById('embeddedVideoTitle'); if(title)title.textContent=v.title+(v.start===0?' · 0:00':'');
+        document.querySelector('.embedded-video-frame')?.scrollIntoView({behavior:'smooth',block:'center'});
+      });
+    }
+
+    const lesson=document.getElementById('lessonWorkspace');
+    if(lesson&&!lesson.dataset.embedObserver){
+      lesson.dataset.embedObserver='1';
+      const convert=()=>{
+        lesson.querySelectorAll('.premium-external-player').forEach(box=>{
+          if(box.dataset.embedded)return;
+          const a=box.querySelector('a[href*="youtube.com/watch"]'); if(!a)return;
+          const u=new URL(a.href),start=parseInt(u.searchParams.get('t')||'0',10)||0;
+          const v=window.TDVideos?.segments?.find(x=>Number(x.start)===start);
+          box.dataset.embedded='1';
+          box.className='lesson-player';
+          box.innerHTML='<iframe src="'+embed(v||{start})+'" title="'+(v?.title||'Curated trading lesson')+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+        });
+      };
+      new MutationObserver(convert).observe(lesson,{childList:true,subtree:true}); convert();
+    }
+  };
+  window.addEventListener('td-cloud-ready',wire,{once:true});
+  if(document.readyState!=='loading')setTimeout(wire,150);else document.addEventListener('DOMContentLoaded',()=>setTimeout(wire,150),{once:true});
+})();
+</script>
+
 </body>
 </html>
