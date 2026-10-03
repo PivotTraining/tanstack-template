@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 
 const dir = path.resolve('legacy-bundle');
-const names = (await readdir(dir)).filter(name => name.startsWith('part-')).sort();
+const names = (await readdir(dir)).filter(name => name.startsWith('chunk-')).sort();
 if (!names.length) throw new Error('Legacy bundle chunks are missing.');
 
 const b64 = (await Promise.all(names.map(name => readFile(path.join(dir, name), 'utf8')))).join('');
