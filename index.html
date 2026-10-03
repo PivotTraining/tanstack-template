@@ -7,7 +7,7 @@
   <title>Trading Desk — 800-Lesson Adaptive Academy V12</title>
   <meta name="description" content="Adaptive trading education, practice, journaling, rewards, and mastery tracking." />
   <link rel="preconnect" href="https://www.youtube-nocookie.com" />
-  <meta name="deployment-build" content="Trading Desk V12.1 curated video public standalone" />
+  <meta name="deployment-build" content="Trading Desk V12.2 YouTube Premium family workflow" />
 </head>
 <body>
   <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
@@ -142,10 +142,10 @@
       </section>
 
       <section class="page" id="videos">
-        <div class="section-head"><div><span class="eyebrow">CURATED VIDEO LAB</span><h1>Watch only what earns its place.</h1><p>Eleven selected segments from Ross Cameron’s Ultimate Day Trading Guide are mapped to the Trading Desk curriculum. Broker picks, introductory quiz material, time-sensitive account rules, and tax material were intentionally excluded.</p></div><span class="curation-badge">11 CURATED SEGMENTS</span></div>
+        <div class="section-head"><div><span class="eyebrow">CURATED VIDEO LAB</span><h1>Watch only what earns its place.</h1><p>Start Ross Cameron’s full class at 0:00, then use the eleven curated chapter links where they strengthen the curriculum. Videos open directly in YouTube so a signed-in Premium family account can use its normal ad-free playback.</p></div><span class="curation-badge">FAMILY · PREMIUM READY</span></div>
         <div class="video-shell curated-shell">
           <div>
-            <div class="video-stage curated-stage"><iframe id="curatedVideoFrame" title="Curated trading lesson" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+            <div class="video-stage curated-stage" style="display:grid;place-items:center;padding:32px;"><div class="card" style="max-width:760px;width:100%;text-align:left;"><span class="card-kicker">ROSS CAMERON · FULL CLASS</span><h2 style="margin-top:8px;">Start from the beginning</h2><p>Open the full Ultimate Day Trading Guide at <b>0:00</b> in YouTube. Stay signed into your family Premium account there, then return here for notes, practice, and mastery evidence.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;"><a class="btn primary" href="https://www.youtube.com/watch?v=oxob0x0Xz7s&list=PLAaEIq3f-DKI&t=0s" target="_blank" rel="noopener noreferrer">Start Ross at 0:00 →</a><a class="btn ghost" id="curatedVideoLink" href="https://www.youtube.com/watch?v=oxob0x0Xz7s&list=PLAaEIq3f-DKI&t=2340s" target="_blank" rel="noopener noreferrer">Open selected chapter →</a></div><small style="display:block;margin-top:14px;">Trading Desk never receives your Google or YouTube password. Premium status is handled entirely by YouTube.</small></div></div>
             <div class="video-now-playing" id="videoNowPlaying"></div>
           </div>
           <aside class="card video-side">
@@ -159,7 +159,7 @@
             <label class="check"><input id="videoPractice" type="checkbox" /> Practiced the concept</label>
             <textarea id="videoNoteText" rows="7" placeholder="What changed in your understanding? What still feels unclear?"></textarea>
             <button class="btn secondary full" id="saveVideoNotes">Save evidence for this segment</button>
-            <small class="video-source-note">External supplemental instruction. Source: Ross Cameron / Warrior Trading. Trading Desk does not treat any strategy or indicator as a guaranteed signal.</small>
+            <small class="video-source-note">External supplemental instruction. Source: Ross Cameron / Warrior Trading. Opened in YouTube for family Premium playback. Trading Desk does not receive Google credentials and does not treat any strategy or indicator as a guaranteed signal.</small>
           </aside>
         </div>
         <div class="section-head compact-head"><div><span class="eyebrow">CURATED SEQUENCE</span><h2>Required, applied, and advanced viewing</h2><p>Start with risk and price reading. Execution tools come later.</p></div></div>
@@ -405,7 +405,16 @@
    const st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
    const order=["data.js", "curriculum-v12.js", "storage.js", "auth.js", "training-core.js", "credential-crypto.js", "app.js", "market-core.js", "history-core.js", "market.js", "connectors.js"];
    for(const name of order){
-     const code=await gunzip(ASSETS[name]);
+     let code=await gunzip(ASSETS[name]);
+     if(name==="app.js"){
+       code=code.replace('function curatedEmbed(v){return `https://www.youtube-nocookie.com/embed/${CURATED_VIDEO_SOURCE}?start=${v.start}&end=${v.end}&rel=0&modestbranding=1`}','function curatedYoutube(v){const t=Math.max(0,Number(v?.start)||0);return `https://www.youtube.com/watch?v=${CURATED_VIDEO_SOURCE}&list=PLAaEIq3f-DKI&t=${t}s`}');
+       code=code.replace('<div class="lesson-player"><iframe src="${curatedEmbed(lessonVideo)}" title="${esc(lessonVideo.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>','<div class="lesson-player premium-external-player"><a class="btn primary" href="${curatedYoutube(lessonVideo)}" target="_blank" rel="noopener noreferrer">Watch in YouTube →</a><p>Opens in YouTube so your signed-in Premium family account can handle playback. Return here for the mastery work.</p></div>');
+       code=code.replace('<span class="inside-badge">IN-PLATFORM VIDEO</span>','<span class="inside-badge">YOUTUBE PREMIUM READY</span>');
+       code=code.replace('<h2>Stay inside the learning flow.</h2>','<h2>Watch the right segment, then come back and prove it.</h2>');
+       code=code.replace('Watch segment →','Open in YouTube →');
+       code=code.replace('wrap.querySelectorAll("[data-play-video]").forEach(b=>b.addEventListener("click",()=>loadCuratedVideo(b.dataset.playVideo,true)));','wrap.querySelectorAll("[data-play-video]").forEach(b=>b.addEventListener("click",()=>{const v=curatedVideo(b.dataset.playVideo);loadCuratedVideo(v.id,true);window.open(curatedYoutube(v),"_blank","noopener,noreferrer")}));');
+       code=code.replace('const ev=p.video.segments[v.id]||{};const frame=$("curatedVideoFrame");if(frame)frame.src=curatedEmbed(v);','const ev=p.video.segments[v.id]||{};const link=$("curatedVideoLink");if(link)link.href=curatedYoutube(v);');
+     }
      const url=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));
      await new Promise((resolve,reject)=>{
        const s=document.createElement('script'); s.src=url; s.onload=()=>{URL.revokeObjectURL(url);resolve();}; s.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Failed loading '+name));}; document.body.appendChild(s);
