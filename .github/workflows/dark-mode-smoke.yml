@@ -23,3 +23,8 @@ jobs:
           python3 -m http.server 4173 >/tmp/td-http.log 2>&1 &
           sleep 2
       - run: node tests/dark-mode-smoke.cjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dark-mode-smoke-screens
+          path: screenshots
