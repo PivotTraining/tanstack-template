@@ -591,6 +591,119 @@ html[data-theme="dark"] .inside-badge{
 }
 </style>
 
+
+<style id="td-academy-dark-surface-fix-v14">
+/* Dark mode Academy must be a continuous learning surface, never a white sheet. */
+html[data-theme="dark"] #academy,
+html[data-theme="dark"] #academy .academy-shell,
+html[data-theme="dark"] #academy .lesson-workspace,
+html[data-theme="dark"] #academy .lesson-workspace > div,
+html[data-theme="dark"] #academy .lesson-workspace > section,
+html[data-theme="dark"] #academy .lesson-workspace > article,
+html[data-theme="dark"] #academy .lesson-catalog,
+html[data-theme="dark"] #academy .catalog-shell,
+html[data-theme="dark"] #academy .catalog-panel,
+html[data-theme="dark"] #academy .curriculum-panel,
+html[data-theme="dark"] #academy .module-panel,
+html[data-theme="dark"] #academy .path-panel,
+html[data-theme="dark"] #academy .lesson-list,
+html[data-theme="dark"] #academy .lesson-unit,
+html[data-theme="dark"] #academy .lesson-unit-head,
+html[data-theme="dark"] #academy .lesson-row{
+  background:#090d12!important;
+  background-image:none!important;
+  color:#e8eef6!important;
+  box-shadow:none!important;
+}
+
+/* Remove the giant window treatment around the catalog. */
+html[data-theme="dark"] #academy .lesson-workspace,
+html[data-theme="dark"] #academy .academy-shell{
+  border:0!important;
+  border-radius:0!important;
+}
+
+/* Unit structure should be lines, not boxes. */
+html[data-theme="dark"] #academy .lesson-unit{
+  border:0!important;
+  border-top:1px solid #242c36!important;
+  border-radius:0!important;
+  margin-top:22px!important;
+}
+html[data-theme="dark"] #academy .lesson-unit-head{
+  border:0!important;
+  border-bottom:1px solid #242c36!important;
+  padding:12px 4px!important;
+}
+html[data-theme="dark"] #academy .lesson-row{
+  border:0!important;
+  border-bottom:1px solid #202832!important;
+  border-radius:0!important;
+}
+html[data-theme="dark"] #academy .lesson-row:hover{
+  background:#0f151d!important;
+}
+
+/* Explicit catalog typography. */
+html[data-theme="dark"] #academy .lesson-workspace h1,
+html[data-theme="dark"] #academy .lesson-workspace h2,
+html[data-theme="dark"] #academy .lesson-workspace h3,
+html[data-theme="dark"] #academy .lesson-workspace h4,
+html[data-theme="dark"] #academy .lesson-row h4,
+html[data-theme="dark"] #academy .lesson-unit-head h3{
+  color:#f3f7fb!important;
+}
+html[data-theme="dark"] #academy .lesson-workspace p,
+html[data-theme="dark"] #academy .lesson-workspace small,
+html[data-theme="dark"] #academy .catalog-note,
+html[data-theme="dark"] #academy .lesson-objective{
+  color:#aab5c3!important;
+}
+html[data-theme="dark"] #academy .lesson-open{
+  color:#dbe5ef!important;
+}
+html[data-theme="dark"] #academy .tier-filter{
+  background:transparent!important;
+  color:#aeb9c7!important;
+  border-color:#303a46!important;
+}
+html[data-theme="dark"] #academy .tier-filter.active{
+  background:#edf2f7!important;
+  color:#0a0e13!important;
+  border-color:#edf2f7!important;
+}
+html[data-theme="dark"] #academy .tier-chip{
+  background:#13202a!important;
+  color:#9edee8!important;
+  border-color:#203744!important;
+}
+
+/* Horizontal competency picker also follows the dark surface. */
+html[data-theme="dark"] #academy .module-rail{
+  background:#090d12!important;
+  border:0!important;
+}
+html[data-theme="dark"] #academy .module-button{
+  background:transparent!important;
+  color:#9ca8b6!important;
+  border-color:#2c3540!important;
+}
+html[data-theme="dark"] #academy .module-button b{
+  color:inherit!important;
+}
+html[data-theme="dark"] #academy .module-button.active{
+  background:#edf2f7!important;
+  color:#0a0e13!important;
+  border-color:#edf2f7!important;
+}
+
+/* Light mode also loses the giant white window so education feels like the page. */
+html:not([data-theme="dark"]) #academy .lesson-workspace,
+html:not([data-theme="dark"]) #academy .lesson-workspace > div:first-child{
+  box-shadow:none!important;
+}
+</style>
+
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
