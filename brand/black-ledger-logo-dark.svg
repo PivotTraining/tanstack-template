@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" role="img" aria-labelledby="t">
+<title id="t">Black Ledger</title>
+<g fill="#F2EEE4" stroke="#F2EEE4">
+  <rect x="8" y="28" width="84" height="124" stroke="none"/>
+  <rect x="112" y="28" width="84" height="124" fill="none" stroke-width="15"/>
+</g>
+<text x="252" y="119" fill="#F2EEE4" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" letter-spacing="-3">Black Ledger</text>
+</svg>
