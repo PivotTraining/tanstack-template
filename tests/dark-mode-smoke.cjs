@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 (async()=>{
-  const browser=await chromium.launch({headless:true});
+  const fs=require('fs');fs.mkdirSync('screenshots',{recursive:true}); const browser=await chromium.launch({headless:true});
   const page=await browser.newPage({viewport:{width:1440,height:1000},colorScheme:'dark'});
   await page.goto('http://127.0.0.1:4173/index.html',{waitUntil:'domcontentloaded'});
   await page.waitForTimeout(2500);
@@ -23,10 +23,10 @@ const { chromium } = require('playwright');
         if(!text||text.length<2)return[];
         const fg=parse(s.color),b=bg(e);if(!fg||!b)return[];
         const ratio=cr(fg,b),fs=parseFloat(s.fontSize)||14,fw=parseInt(s.fontWeight)||400,min=(fs>=24||(fs>=18.66&&fw>=700))?3:4.5;
-        return ratio<min?[{text:text.slice(0,70),ratio:+ratio.toFixed(2),min,cls:e.className||e.tagName}]:[];
+        return ratio<min?[{text:text.slice(0,70),ratio:+ratio.toFixed(2),min,cls:e.className||e.tagName,color:s.color,background:'rgb('+b.slice(0,3).join(',')+')',parent:e.parentElement?.className||e.parentElement?.tagName||''}]:[];
       });
     });
-    console.log('PAGE',id,'FAILURES',bad.length);
+    await page.screenshot({path:'screenshots/'+id+'.png',fullPage:true}); console.log('PAGE',id,'FAILURES',bad.length);
     bad.slice(0,20).forEach(x=>console.log(JSON.stringify(x)));
     results.push(...bad.map(x=>({...x,page:id})));
   }
