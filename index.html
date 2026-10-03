@@ -1033,6 +1033,60 @@ html[data-theme="dark"] .main > :where(.preview-banner,.public-display-banner,.d
 }
 </style>
 
+
+<style id="td-dark-final-contrast-v14">
+html[data-theme="dark"] #academy #journeyPractice{
+  background:#17212c!important;
+  color:#eef3f8!important;
+  border-color:#2c3946!important;
+}
+
+html[data-theme="dark"] #credentials .credential-disclaimer{
+  background:#0d141c!important;
+  color:#cbd5e1!important;
+  border:1px solid #2a3541!important;
+}
+
+html[data-theme="dark"] #credentials #transcriptBody > div:first-child > div,
+html[data-theme="dark"] #credentials #transcriptBody > div > div{
+  background:#0d141c!important;
+  color:#e8eef6!important;
+  border-color:#28333f!important;
+}
+html[data-theme="dark"] #credentials #transcriptBody :where(b,strong,h3,h4){
+  color:#f5f8fc!important;
+}
+html[data-theme="dark"] #credentials #transcriptBody :where(span,small,p){
+  color:#aeb9c7!important;
+}
+
+/* Runtime public-display notice */
+html[data-theme="dark"] .td-preview-banner{
+  background:#111821!important;
+  color:#dce5ef!important;
+  border-color:#2a3541!important;
+}
+html[data-theme="dark"] .td-preview-banner :where(span,p,small){
+  color:#b8c4d2!important;
+}
+html[data-theme="dark"] .td-preview-banner :where(b,strong){
+  color:#f5f8fc!important;
+}
+</style>
+<script id="td-preview-banner-marker-v14">
+(function(){
+  const mark=()=>{
+    for(const el of document.querySelectorAll('body *')){
+      const direct=[...el.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent||'').join(' ').replace(/\s+/g,' ').trim();
+      if(direct.includes('Full published Trading Desk')){el.classList.add('td-preview-banner');break}
+    }
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(mark,500),{once:true});
+  else setTimeout(mark,500);
+  new MutationObserver(mark).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
