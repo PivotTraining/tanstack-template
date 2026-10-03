@@ -8,6 +8,152 @@
   <meta name="description" content="Adaptive trading education, practice, journaling, rewards, and mastery tracking." />
   <link rel="preconnect" href="https://www.youtube-nocookie.com" />
   <meta name="deployment-build" content="Trading Desk V12.2 YouTube Premium family workflow" />
+
+  <style id="td-simplified-ui-v123">
+    :root{
+      --td-page-max:1320px;
+      --td-text:#1a1a1a;
+      --td-muted:#737373;
+      --td-line:rgba(20,20,20,.09);
+      --td-soft:rgba(20,20,20,.035);
+    }
+    html{font-size:15px}
+    body{font-size:1rem;line-height:1.5;color:var(--td-text)}
+    .main{min-width:0}
+    .page{max-width:var(--td-page-max);margin:0 auto;padding:28px 36px 72px}
+    .topbar{min-height:70px;padding:14px 32px;border-bottom:1px solid var(--td-line);background:rgba(251,250,247,.9)}
+    .topbar h2{font-size:1.1rem!important;line-height:1.2;margin:2px 0 0;font-weight:650}
+    .topbar .eyebrow{font-size:.64rem;letter-spacing:.12em;color:var(--td-muted)}
+    .top-actions{gap:8px}
+    .pill-stat{background:transparent!important;border:0!important;padding:4px 7px!important;box-shadow:none!important}
+    .pill-stat span{font-size:.58rem!important;color:#9a9a9a!important;letter-spacing:.09em}
+    .pill-stat strong{font-size:.82rem!important;font-weight:650!important}
+    .pill-stat:has(#topGrade),.pill-stat:has(#topStreak){display:none}
+    .profile-chip{padding:5px 8px!important;border:0!important;background:transparent!important;box-shadow:none!important}
+    .profile-chip .avatar{width:30px!important;height:30px!important;font-size:.72rem!important}
+    .profile-chip b{font-size:.78rem!important}
+    .profile-chip small{font-size:.64rem!important;color:var(--td-muted)!important}
+    .sidebar{padding-top:18px}
+    .logo-lockup.compact{margin-bottom:18px}
+    .nav{gap:2px}
+    .nav-item{min-height:38px!important;padding:8px 12px!important;border-radius:9px!important;font-size:.82rem!important;font-weight:520!important;letter-spacing:0!important}
+    .nav-item span{opacity:.55}
+    .nav-item.active{font-weight:650!important;box-shadow:none!important}
+    .side-card{padding:12px!important;margin-top:18px!important;background:transparent!important;border:1px solid var(--td-line)!important;box-shadow:none!important}
+    .side-row{font-size:.7rem!important}
+    .sidebar-foot{font-size:.68rem!important;color:#8c8c8c!important}
+
+    h1{font-size:clamp(1.85rem,2.7vw,2.65rem)!important;line-height:1.08!important;letter-spacing:-.035em!important}
+    h2{font-size:clamp(1.25rem,1.8vw,1.65rem)!important;line-height:1.18!important;letter-spacing:-.025em!important}
+    h3{font-size:1.02rem!important;line-height:1.25!important;letter-spacing:-.012em!important}
+    p{max-width:72ch;color:#5f5f5f}
+    .eyebrow,.card-kicker,.status-pill,.curation-badge,.security-badge,.lab-tag,.inside-badge{font-size:.62rem!important;letter-spacing:.11em!important}
+    .status-pill,.curation-badge,.security-badge,.lab-tag,.inside-badge{padding:5px 8px!important;border-radius:999px!important}
+    .section-head{margin:34px 0 16px!important;gap:18px!important;align-items:flex-end!important}
+    .section-head:first-child{margin-top:2px!important}
+    .section-head h1,.section-head h2{margin-top:5px!important;margin-bottom:5px!important}
+    .section-head p{font-size:.91rem!important;line-height:1.55!important;margin-top:4px!important;max-width:68ch!important;color:#777!important}
+    .compact-head{margin-top:30px!important}
+    .btn{min-height:38px!important;padding:9px 14px!important;border-radius:10px!important;font-size:.79rem!important;font-weight:620!important;box-shadow:none!important}
+    .btn.primary{box-shadow:none!important}
+    .btn.ghost,.btn.secondary{background:transparent!important}
+    .text-link{font-size:.8rem!important;font-weight:620!important}
+    .card,.glass,.practice-panel,.journey-shell,.academy-shell,.video-side,.market-card{box-shadow:none!important}
+    .card{padding:18px!important;border-color:var(--td-line)!important;border-radius:14px!important}
+    .card p{font-size:.86rem!important;line-height:1.52!important}
+    .card h3{margin:5px 0 7px!important}
+    .divider{opacity:.45}
+
+    #dashboard{padding-top:30px}
+    .hero-card{grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr)!important;gap:34px!important;padding:32px!important;border-radius:18px!important;box-shadow:none!important}
+    .hero-copy h1{max-width:650px!important;margin:10px 0 10px!important}
+    .hero-copy>p{font-size:.96rem!important;line-height:1.55!important;max-width:62ch!important}
+    .hero-actions{margin-top:20px!important;gap:9px!important}
+    .adaptive-console{margin-top:24px!important;padding:14px!important;gap:10px!important;border-radius:12px!important;background:var(--td-soft)!important;border-color:transparent!important}
+    .adaptive-console label span{font-size:.64rem!important}
+    .adaptive-console select{font-size:.79rem!important}
+    .adaptive-note{font-size:.68rem!important;opacity:.65}
+    .hero-metrics{padding:4px 0!important}
+    .level-orbit{transform:scale(.82);transform-origin:center}
+    .metric-line{font-size:.75rem!important}
+    .metric-four{gap:8px!important;margin-top:14px!important}
+    .metric-four>div{padding:8px!important;background:transparent!important;border:0!important}
+    .metric-four b{font-size:.92rem!important}
+    .metric-four span{font-size:.62rem!important;color:#8d8d8d!important}
+    #dashboard>.section-head{margin-top:30px!important}
+    #dashboard .card-grid.three{grid-template-columns:1.5fr .75fr .75fr!important;gap:12px!important}
+    #dashboard .card-grid.three .card:first-child{padding:22px!important}
+    #dashboard .card-grid.three .card:not(:first-child){background:transparent!important}
+    #dashboard .card-grid.three .card:not(:first-child) p{display:none}
+    .dashboard-secondary-link{margin-top:18px;padding-top:6px;border-top:1px solid var(--td-line)}
+
+    .academy-head{align-items:flex-end!important}
+    .academy-head>div:first-child p{max-width:66ch!important}
+    .inline-controls{gap:7px!important}
+    .inline-controls select{min-height:36px!important;font-size:.75rem!important;padding:6px 28px 6px 9px!important}
+    .journey-shell{padding:16px!important;border-radius:14px!important;margin:14px 0 18px!important}
+    .journey-intro{align-items:center!important}
+    .journey-intro h2{font-size:1.1rem!important}
+    .journey-intro p{display:none}
+    .journey-legend{font-size:.66rem!important;gap:10px!important;opacity:.7}
+    .journey-map{margin-top:10px!important}
+    .journey-summary{font-size:.75rem!important;padding-top:8px!important}
+    .academy-shell{gap:16px!important}
+    .module-rail{width:260px!important;min-width:260px!important}
+    .lesson-workspace{min-width:0}
+    .lesson-workspace .card,.lesson-workspace article{box-shadow:none!important}
+    
+    #videos .video-shell{gap:16px!important}
+    #videos .curated-stage{padding:18px!important;min-height:0!important}
+    #videos .curated-stage .card{max-width:none!important}
+    #videos .video-side{padding:18px!important}
+    #videos textarea{min-height:112px!important;font-size:.82rem!important}
+    .curated-video-grid{gap:10px!important}
+    
+    .practice-head{align-items:flex-end!important}
+    .practice-strip{gap:0!important;margin:12px 0 16px!important;border:1px solid var(--td-line)!important;border-radius:12px!important;background:transparent!important}
+    .practice-strip>div{padding:10px 12px!important;border-right:1px solid var(--td-line)!important;background:transparent!important}
+    .practice-strip>div:last-child{border-right:0!important}
+    .practice-strip span{font-size:.6rem!important;color:#888!important}
+    .practice-strip b{font-size:.83rem!important}
+    .practice-tabs{gap:4px!important;margin-bottom:14px!important}
+    .practice-tabs button{padding:8px 11px!important;font-size:.74rem!important;border-radius:8px!important}
+    .practice-shell-v7{gap:14px!important}
+    .practice-panel{padding:18px!important;border-radius:14px!important}
+    .lab-header{margin-bottom:12px!important}
+    
+    .path-grid,.card-grid{gap:12px!important}
+    input,select,textarea{font-size:.84rem!important}
+    label{font-size:.75rem!important}
+    
+    @media (max-width:1100px){
+      .page{padding:24px 24px 60px}
+      .hero-card{grid-template-columns:1fr!important}
+      .hero-metrics{display:grid!important;grid-template-columns:auto 1fr!important;align-items:center!important;gap:14px!important}
+      #dashboard .card-grid.three{grid-template-columns:1fr 1fr!important}
+      #dashboard .card-grid.three .card:first-child{grid-column:1/-1}
+      .module-rail{width:230px!important;min-width:230px!important}
+    }
+    @media (max-width:760px){
+      html{font-size:14px}
+      .page{padding:18px 15px 48px}
+      .topbar{padding:10px 14px}
+      .top-actions .pill-stat{display:none}
+      .profile-chip small{display:none}
+      .hero-card{padding:20px!important;gap:18px!important}
+      .adaptive-console{grid-template-columns:1fr!important}
+      #dashboard .card-grid.three{grid-template-columns:1fr!important}
+      #dashboard .card-grid.three .card:first-child{grid-column:auto}
+      #dashboard .card-grid.three .card:not(:first-child) p{display:block}
+      .section-head{align-items:flex-start!important;flex-direction:column!important;margin-top:26px!important}
+      .academy-shell{display:block!important}
+      .module-rail{width:100%!important;min-width:0!important;margin-bottom:12px!important}
+      .journey-legend{display:none!important}
+      .practice-strip{overflow-x:auto!important}
+      .practice-strip>div{min-width:108px}
+    }
+  </style>
+
 </head>
 <body>
   <div class="bg-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
@@ -122,8 +268,7 @@
           <article class="card accent-gold"><span class="card-kicker">REFLECT</span><h3>Grade the process</h3><p>Log a trade or simulation and score execution separately from P&amp;L.</p><button class="text-link" data-jump="journal">Open journal →</button></article>
         </div>
 
-        <div class="section-head"><div><span class="eyebrow">MASTERY MAP</span><h2>Ten competency paths</h2><p>Knowledge, execution, risk, and psychology are trained as separate skills.</p></div><button class="btn ghost" data-jump="mastery">View mastery analytics</button></div>
-        <div class="path-grid" id="pathGrid"></div>
+        <div class="dashboard-secondary-link"><button class="text-link" data-jump="mastery">View mastery analytics →</button></div>
       </section>
 
       <section class="page" id="academy">
