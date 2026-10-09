@@ -309,7 +309,7 @@ export default function JuniorPage() {
               <div className="jrPill">{lesson.questions.filter(item => completed.has(item.id)).length} of {lesson.questions.length} complete</div>
             </div>
             <div className="jrTeach"><span>💡 HERE&apos;S THE IDEA</span><p>{lesson.analogy}</p><strong>Remember: {lesson.remember}</strong></div>
-            {question && !lessonFinished ? (
+            {question ? (
               <section className="jrPractice" aria-labelledby="jrQuestion">
                 <div className="jrQuestionLabel"><span>YOUR TURN</span><span>{question.level === 1 ? 'Starter' : question.level === 2 ? 'Explorer' : 'Challenge'} level</span></div>
                 <h2 id="jrQuestion">{question.prompt}</h2>
